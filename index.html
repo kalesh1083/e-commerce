@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEase - E-Commerce</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif;}
+    body { background:#f4f6ff; color:#333;}
+
+    header {
+      background:#0d47a1; color:white;
+      padding:15px 40px; display:flex;
+      justify-content:space-between; align-items:center;
+      position:sticky; top:0; z-index:100;
+    }
+    nav a { color:white; text-decoration:none; margin-left:20px; font-weight:500; transition:0.3s;}
+    nav a:hover, nav a.active-link { text-decoration:underline;}
+
+    .hero { 
+      background:url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?fit=crop&w=1200&q=80') center/cover;
+      height:55vh; display:flex; align-items:center; justify-content:center; 
+      color:white; text-shadow:1px 1px 4px black;
+    }
+    .hero h1 { background:rgba(0,0,0,0.4); padding:15px 25px; border-radius:8px; font-size:40px; text-align:center;}
+
+    .category-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; padding:40px; }
+    .card { background:white; border-radius:10px; box-shadow:0 3px 7px rgba(0,0,0,0.15); text-align:center; padding:20px; cursor:pointer; transition:0.3s;}
+    .card:hover { transform:translateY(-6px); box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+    .card img { width:100%; height:180px; object-fit:cover; border-radius:8px; margin-bottom:10px;}
+    .card h3 { color:#0d47a1; margin-bottom:5px; }
+
+    .products { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; padding:40px;}
+    .product { background:white; border-radius:10px; box-shadow:0 3px 7px rgba(0,0,0,0.15); text-align:center; padding:15px; transition: transform 0.3s, box-shadow 0.3s;}
+    .product:hover { transform:translateY(-6px); box-shadow:0 4px 12px rgba(0,0,0,0.2);}
+    .product img { width:100%; height:220px; object-fit:cover; border-radius:8px; margin-bottom:5px;}
+    .product h3 { color:#0d47a1; margin:12px 0 5px;}
+    .btn { background:#0d47a1; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; transition:0.3s; font-weight:bold; margin-top:10px;}
+    .btn:hover { background:#1565c0; }
+    section { display:none;}
+    section.active { display:block;}
+    footer { background:#0d47a1; color:white; text-align:center; padding:15px; margin-top:30px;}
+  </style>
+</head>
+<body>
+
+<header>
+  <h2>ShopEase</h2>
+  <nav>
+    <a href="#" onclick="showSection('home')" class="active-link">Home</a>
+    <a href="#" onclick="showSection('watches')">Watches</a>
+    <a href="#" onclick="showSection('shoes')">Shoes</a>
+    <a href="#" onclick="showSection('headphones')">Headphones</a>
+  </nav>
+</header>
+
+<section id="home" class="active">
+  <div class="hero"><h1>Shop Smart, Live Better!</h1></div>
+  <div class="category-cards">
+    <div class="card" onclick="showSection('watches')">
+      <img src="https://media.gq.com/photos/5e8c9a7cc21b8b00087a00f1/16:9/w_2560%2Cc_limit/watches-fix.jpg" alt="Watches">
+      <h3>Watches</h3>
+      <p>Stylish & Smart Watches</p>
+    </div>
+    <div class="card" onclick="showSection('shoes')">
+      <img src="https://media.gq.com/photos/60d21a25ab6b8cc6e9d2c80a/1:1/w_3600,h_3600,c_limit/SNEAKER_GUIDE_OPENER.jpg" alt="Shoes">
+      <h3>Shoes</h3>
+      <p>Comfortable & Trendy</p>
+    </div>
+    <div class="card" onclick="showSection('headphones')">
+      <img src="https://i.rtings.com/assets/pages/L5p4nCs2/best-sennheiser-headphones-20251002-medium.jpg?format=auto" alt="Headphones">
+      <h3>Headphones</h3>
+      <p>High Quality Sound</p>
+    </div>
+  </div>
+</section>
+
+<section id="watches">
+  <div class="hero" style="background:url('https://media.gq.com/photos/5e8c9a7cc21b8b00087a00f1/16:9/w_2560%2Cc_limit/watches-fix.jpg') center/cover;"><h1>Smart Watches</h1></div>
+  <div class="products">
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/51QGfUX59TL.jpg" alt="Luxury Watch">
+      <h3>Luxury Gold Watch</h3><p>Elegant style with premium finish.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://pk.hellofaster.com/cdn/shop/files/NERV_Watch_Pro_SE.jpg?v=1761653465" alt="Fitness Watch">
+      <h3>Fitness Watch Pro</h3><p>Track steps, heart rate & calories easily.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://7star.pk/wp-content/uploads/2021/11/F-91.jpg" alt="Digital Wristwatch">
+      <h3>Digital Wristwatch</h3><p>Water-resistant and highly durable.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://vigriwatch.com/1069557-large_default/casio-collectin-mtp-b145d-2a2vef.jpg" alt="Classic Analog Watch">
+      <h3>Classic Analog Watch</h3><p>Timeless design, premium craftsmanship.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU-F7EyuhtluxPSHyVEk05yxDXg28Gqeh4cQ&s" alt="Sport Watch">
+      <h3>Sport Chrono Watch</h3><p>Perfect for active lifestyles.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+  </div>
+  <center><button class="btn" onclick="showSection('home')" style="margin-bottom:20px;">Back to Home</button></center>
+</section>
+
+<section id="shoes">
+  <div class="hero" style="background:url('https://media.gq.com/photos/60d21a25ab6b8cc6e9d2c80a/1:1/w_3600,h_3600,c_limit/SNEAKER_GUIDE_OPENER.jpg') center/cover;"><h1>Shoes</h1></div>
+  <div class="products">
+    <div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhoDAD59tZgfweie-ilVOxuysPh3agDlncEw&73" alt="Running Shoes">
+      <h3>Ultra Boost Running Shoes</h3><p>Breathable comfort for long runs.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrX-tmPKv1L7hTfsTv3cBQuZXd9DWsFaYDNw&s" alt="High-Top Sneakers">
+      <h3>High-Top Street Sneakers</h3><p>Trendy high-top streetwear design.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://neemans.com/cdn/shop/files/ND-CPS-Blue-_WebOptimized_a_15413904-076f-4007-8c36-f05cc26b215e.jpg?v=1724987499&width=1600" alt="Casual Sneakers">
+      <h3>Everyday Casual Sneakers</h3><p>Everyday comfort and style.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://cdn.thewirecutter.com/wp-content/media/2024/05/runningshoesforyou-2048px-2254.jpg?auto=webp&quality=75&width=1024" alt="Pro Running Sneakers">
+      <h3>Pro Running Sneakers</h3><p>Lightweight & flexible design.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://www.ndure.com/cdn/shop/files/1_e01c8fcb-a8be-4074-9b86-825489b236ed.jpg?v=1752841201" alt="Urban Casual Shoes">
+      <h3>Urban Casual Shoes</h3><p>Comfortable for daily use.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+  </div>
+  <center><button class="btn" onclick="showSection('home')" style="margin-bottom:20px;">Back to Home</button></center>
+</section>
+
+<section id="headphones">
+  <div class="hero" style="background:url('https://i.rtings.com/assets/pages/L5p4nCs2/best-sennheiser-headphones-20251002-medium.jpg?format=auto') center/cover;"><h1>Headphones</h1></div>
+  <div class="products">
+    <div class="product">
+      <img src="https://img.drz.lazcdn.com/static/pk/p/4185c8b591c5fbd3cc24e3ab655319ad.jpg_720x720q80.jpg_.webp" alt="ANC Over-Ear Headphones">
+      <h3>ANC Over-Ear Headphones</h3><p>Crystal-clear audio with long battery.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://alephksa.com/cdn/shop/files/eComm_498_PowerbeatsPro2_BLACK-RGB-Angle01_v032.jpg?v=1737360219&width=1445" alt="Sports Earbuds">
+      <h3>Sports Earbuds Pro</h3><p>Perfect for workouts and outdoor runs.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://www.laraibnow.com/images/product_gallery/1686066189_tronsmart-t7-mini-portable-bluetooth-speaker.jpg" alt="Portable Bluetooth Speakers">
+      <h3>Portable Bluetooth Speakers</h3><p>Portable sound for any adventure.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://xcessorieshub.com/wp-content/uploads/2022/11/bose-700-headphone1-1-1.webp" alt="Noise Cancelling Headphones">
+      <h3>Noise Cancelling Headphones</h3><p>Block distractions, enjoy music.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://pakistanstore.pk/wp-content/uploads/2024/05/X15-Pro-RGB-Gaming-Headset.webp" alt="Gaming Headset Pro">
+      <h3>Gaming Headset Pro</h3><p>Immersive sound for gamers.</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+  </div>
+  <center><button class="btn" onclick="showSection('home')" style="margin-bottom:20px;">Back to Home</button></center>
+</section>
+
+<footer>
+  <p>© 2025 ShopEase. All Rights Reserved.</p>
+</footer>
+
+<script>
+  function showSection(id){
+    document.querySelectorAll('section').forEach(sec=>sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0,0);
+    document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active-link'));
+    document.querySelector(`nav a[onclick="showSection('${id}')"]`)?.classList.add('active-link');
+  }
+</script>
+
+</body>
+</html>
